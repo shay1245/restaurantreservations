@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Management Portal</h1>
+        
+        <!-- Add Customer Form -->
+        <form action="RestaurantServer.php" method="post" class="form">
+            <h2>Add Customer</h2>
+            <input type="hidden" name="action" value="addCustomer">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="name" required>
+            <label for="contactInfo">Contact Info:</label>
+            <input type="text" id="contactInfo" name="contact">
+            <button type="submit">Add Customer</button>
+        </form>
+
+        <!-- Add Reservation Form -->
+        <form action="RestaurantServer.php" method="post" class="form">
+            <h2>Add Reservation</h2>
+            <input type="hidden" name="action" value="addReservation">
+            <label for="reservationName">Customer Name:</label>
+            <input type="text" id="reservationName" name="name" required>
+            <label for="reservationTime">Reservation Time:</label>
+            <input type="datetime-local" id="reservationTime" name="time" required>
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required>
+            <label for="specialRequests">Special Requests:</label>
+            <input type="text" id="specialRequests" name="requests">
+            <button type="submit">Add Reservation</button>
+        </form>
+
+        <!-- View Preferences Form -->
+        <form action="RestaurantServer.php" method="post" class="form">
+            <h2>View Preferences</h2>
+            <input type="hidden" name="action" value="getCustomerPreferences">
+            <label for="preferencesCustomerId">Customer ID:</label>
+            <input type="number" id="preferencesCustomerId" name="customerId" required>
+            <button type="submit">View Preferences</button>
+        </form>
+    </div>
+</body>
+</html>
